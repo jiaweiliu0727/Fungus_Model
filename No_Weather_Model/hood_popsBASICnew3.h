@@ -36,7 +36,8 @@ double gamma = Params->PARS[13];
 double gamma2 = Params->PARS[14];
 
 //double cover = 1.0;		//CK// effect of cage.  Testing to see if EXP bugs had higher or lower infection than ferals
-double cover = Params->PARS[20];		//CK// effect of cage.  Testing to see if EXP bugs had higher or lower infection than ferals
+double cover_C = Params->PARS[17];		//CK// effect of cage.  Testing to see if EXP bugs had higher or lower infection than ferals
+double cover_R = Params->PARS[20];		//CK// effect of cage.  Testing to see if EXP bugs had higher or lower infection than ferals
 double open_C = Params->PARS[24];		//CK// effect of cage.  Testing to see if EXP bugs had higher or lower infection than ferals
 double open_R = Params->PARS[25];		//CK// effect of cage.  Testing to see if EXP bugs had higher or lower infection than ferals
 
@@ -130,12 +131,13 @@ for(j = 0; j<=(Params->MAXT2[pop]); j++){    //loop calculating the likelihood f
 
 	y1=Params->EXPDATA[pop][j][0];		y2=Params->EXPDATA[pop][j][1];		//CK//  S and F(infected by fungus) for that cage
 	n2=y1+y2;  //summing total bugs in cage
-
+        y1=n2-y2;
+	
 	if(Params->EXPDATA[pop][j][3] == 1){  //Covered cages
 
 		//par = (cover+cage)*((r1+r2)/2);
-		par = cover*((r1+r2)/2);
-		//par = cover_C*((c1+c2)/2) + cover_R*((r1+r2)/2);
+		//par = cover*((r1+r2)/2);
+		par = cover_C*((c1+c2)/2) + cover_R*((r1+r2)/2);
 		//par = ((c1+c2)/2) + ((r1+r2)/2);
 
 
