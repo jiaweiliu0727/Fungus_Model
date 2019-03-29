@@ -282,6 +282,8 @@ while (LoopNumber<=Realizations) {     //CK// BOUND LOOP START!!!!
 
 			//printf("NEW Params.PARS: %e\n",Params.PARS[k]);
 		}
+	Params.PARS[28]=279.75285;  //JL: Previously, this is a parameter, but afterwards we think it does not matter in MCMC, so we take the average in the previous MCMC run and use this value to fix this parameter.
+
 //getc(stdin);
 //JL: In the testing period, setting upper bounds for some parameters to make the MCMC process go smoothly. Finally, without these bounds, the process can go without being stuck.
 		//if(Params.PARS[11]>1.0){Params.PARS[11] = 1.0;}
@@ -387,6 +389,8 @@ while (LoopNumber<=Realizations) {     //CK// BOUND LOOP START!!!!
 
 			//printf("Params.PARS: %e\n",Params.PARS[k]);
 		}
+	Params.PARS[28]=279.75285;  //JL: Previously, this is a parameter, but afterwards we think it does not matter in MCMC, so we take the average in the previous MCMC run and use this value to fix this parameter.
+
 //JL: In the testing period, setting upper bounds for some parameters to make the MCMC process go smoothly. Finally, without these bounds, the process can go without being stuck.
 		//if(Params.PARS[11]>1.0){Params.PARS[11] = 1.0;}
 		//if(Params.PARS[12]>1.0){Params.PARS[12] = 1.0;}
