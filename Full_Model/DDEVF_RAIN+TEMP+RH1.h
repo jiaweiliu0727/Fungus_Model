@@ -348,7 +348,7 @@ while (t_0<MAXT3+h)	{    //CK// change MAXT to MAXT2 to let it go to the end of 
 		if(DD10>=C_end){Params->size_C=0.0;}	//CK// stops new conidia production once a fit size has been reached.
 
 
-		nuF2 = specific_nuF*exp(RH_P*Params->WDATA[pop][line_ticker - 1][6] * exp(rand_nuF[(int)t]));    //JL: Calculating the conidia transmission rate, related to minimum humidity
+		nuF2 = specific_nuF*exp(RH_P*Params->WDATA[pop][line_ticker - 1][6]) * exp(rand_nuF[(int)t]);    //JL: Calculating the conidia transmission rate, related to minimum humidity
 		//JL: The stochasticity differs every day. Here use (int)t to get the stochasticity of the day that time t is in.
 		if(nuF2> pow(8.0,8.0)){nuF2= pow(8.0,8.0);}
 
