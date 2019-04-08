@@ -274,6 +274,7 @@ while (LoopNumber<=Realizations) {     //CK// BOUND LOOP START!!!!
 
 			//printf("NEW Params.PARS: %e\n",Params.PARS[k]);
 		}
+	        Params.PARS[12]=Params.PARS[12]*4.74;    //JL: We have found this parameter out of bound indicated by PCA, but after multiplying this constant, it will give almost the best likelihood value.
 		Params.PARS[28]=291.25355;  //JL: Previously, this is a parameter, but afterwards we think it does not matter in MCMC, so we take the average in the previous MCMC run and use this value to fix this parameter.
 
 //getc(stdin);
@@ -383,6 +384,7 @@ while (LoopNumber<=Realizations) {     //CK// BOUND LOOP START!!!!
 
 			//printf("Params.PARS: %e\n",Params.PARS[k]);
 		}
+	        Params.PARS[12]=Params.PARS[12]*4.74;    //JL: We have found this parameter out of bound indicated by PCA, but after multiplying this constant, it will give almost the best likelihood value.
 		Params.PARS[28]=291.25355;  //JL: Previously, this is a parameter, but afterwards we think it does not matter in MCMC, so we take the average in the previous MCMC run and use this value to fix this parameter.
 
 //JL: In the testing period, setting upper bounds for some parameters to make the MCMC process go smoothly. Finally, without these bounds, the process can go without being stuck.
